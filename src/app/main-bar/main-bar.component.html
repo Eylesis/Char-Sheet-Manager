@@ -1,0 +1,28 @@
+<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+<mat-sidenav-container class="example-container">
+  <mat-sidenav #leftSidenav mode="side"  class="example-sidenav-content">
+  
+  <!--<mat-sidenav class="example-sidenav-content" #sidenav mode="side" [(opened)]=opened>-->
+        <img src="assets\logo.png" alt="Site Logo" routerLink="" class="logo">
+        <div class="SiteTitle">Site Title</div>
+        <mat-divider></mat-divider>
+        <br>
+        <a mat-button href="" class="button"><mat-icon aria-label="Home">home</mat-icon>Home</a>
+        <a mat-button href="characterlist" class="button"><mat-icon aria-label="Characters">people</mat-icon>Characters</a>
+        <a mat-button href="newcharacter" class="button"><mat-icon aria-label="New Character">person_add</mat-icon>New Character</a>
+        <a mat-button href="https://github.com/eylesis" target="_blank" class="button"><mat-icon svgIcon="github"></mat-icon>GitHub</a>
+        <a mat-button href="" class="button"><mat-icon aria-label="Feedback">mail</mat-icon>Feedback</a>
+        <mat-divider></mat-divider>
+        <br>
+        <div>
+            <a mat-button *ngFor="let i of characters" routerLink="/character/{{i.id}}" replaceUrl= True class="charButton truncate">{{i.name}}</a>
+      </div>
+
+  </mat-sidenav>
+
+  <mat-sidenav-content class="sidenav-main-content">
+    <!--Main content-->
+    <router-outlet></router-outlet>
+  </mat-sidenav-content>
+</mat-sidenav-container>

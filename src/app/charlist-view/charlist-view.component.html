@@ -1,0 +1,10 @@
+<app-main-toolbar name="Characters"></app-main-toolbar>
+
+<div  class="card-deck-container">
+    
+  <div *ngFor="let i of characters" class="card-item">
+    <img src="https://via.placeholder.com/150" routerLink="/character/{{i.id}}" replaceUrl= True>
+    <div class="charInfo truncate">{{i.name}}</div>
+    <div class="overlay"></div>
+  </div>
+</div>

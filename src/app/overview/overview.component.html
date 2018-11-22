@@ -1,0 +1,27 @@
+<div class="row">
+  <div class="column left">
+    <div *ngFor="let abi of abiNames; let i = index" class= "ability-mini-card">
+      <div class="subhead title flex layout horizontal center">
+        {{abi}}
+      </div>
+      <div class= "numbers">
+        <div class="display1">
+          {{abiScores[i]}}
+        </div>
+        <div class= "subhead modifier">
+          {{modDecorator[i]}}{{abiMods[i]}}
+        </div>
+      </div>  
+    </div>
+
+  </div>
+  <div class="column middle">
+
+  </div>
+  <div class="column middle">
+
+  </div>
+  <div class="column middle">
+
+  </div>
+</div>
