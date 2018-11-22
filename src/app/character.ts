@@ -5,7 +5,7 @@ export class Character {
         "str" : number,
         "dex" : number,
         "con" : number,
-        "intel" : number,
+        "int" : number,
         "wis" : number,
         "cha" : number
     };
@@ -56,6 +56,7 @@ export class Character {
         "exp" : number,
         "alignment" : string,
         "ac" : number,
+        "speed" : number,
         "init" : number,
         "prof" : number,
         "curHP" : number,

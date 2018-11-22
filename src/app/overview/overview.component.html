@@ -1,9 +1,10 @@
 <div class="row">
   <div class="column left">
-    <div *ngFor="let abi of abiNames; let i = index" class= "ability-mini-card">
+    <div *ngFor="let abi of abiNames; let i = index" class= "mini-card">
       <div class="subhead title flex layout horizontal center">
         {{abi}}
       </div>
+      <hr noshade height="1" color="slategray" style="padding:0px;margin:0px">
       <div class= "numbers">
         <div class="display1">
           {{abiScores[i]}}
@@ -16,7 +17,20 @@
 
   </div>
   <div class="column middle">
+    <div class= "reg-card">
+      <div class="subhead title flex layout horizontal center">Saving Throws</div>
+      <hr noshade color="slategray" style="padding:0px;margin:0px">
+      <div *ngFor="let abi of abiNames; let k = index" style = "line-height:25px;display: flex;align-items: center;margin-left:5px">
+        <mat-icon aria-label="prof" style="height:100%">{{profButton[k]}}</mat-icon>{{abi}}: {{saveDecorator[k]}}{{savingThrows[k]}}
+      </div>
+    </div>
 
+    <div class= "reg-card">
+      <div class="subhead title flex layout horizontal center">Stats</div>
+      <hr noshade color="slategray" style="padding:0px;margin:0px">
+      <div *ngFor="let stat of charStats; let k = index" style = "line-height:25px;display: flex;align-items: center;margin-left:5px">
+      {{statName[k]}}: {{stat}} 
+      </div>
   </div>
   <div class="column middle">
 
