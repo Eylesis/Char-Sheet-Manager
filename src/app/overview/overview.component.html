@@ -10,18 +10,18 @@
           {{abiScores[i]}}
         </div>
         <div class= "subhead modifier">
-          {{modDecorator[i]}}{{abiMods[i]}}
+          {{modDecorators[i]}}{{abiMods[i]}}
         </div>
       </div>  
     </div>
-
   </div>
+
   <div class="column middle">
     <div class= "reg-card">
       <div class="subhead title flex layout horizontal center">Saving Throws</div>
       <hr noshade color="slategray" style="padding:0px;margin:0px">
       <div *ngFor="let abi of abiNames; let k = index" style = "line-height:25px;display: flex;align-items: center;margin-left:5px">
-        <mat-icon aria-label="prof" style="height:100%">{{profButton[k]}}</mat-icon>{{abi}}: {{saveDecorator[k]}}{{savingThrows[k]}}
+        <mat-icon aria-label="prof" style="height:100%">{{profButtons[k]}}</mat-icon>{{abi}}: {{saveDecorators[k]}}{{savingThrows[k]}}
       </div>
     </div>
 
@@ -29,13 +29,34 @@
       <div class="subhead title flex layout horizontal center">Stats</div>
       <hr noshade color="slategray" style="padding:0px;margin:0px">
       <div *ngFor="let stat of charStats; let k = index" style = "line-height:25px;display: flex;align-items: center;margin-left:5px">
-      {{statName[k]}}: {{stat}} 
+      {{statNames[k]}}: {{stat}} 
       </div>
+    </div>
   </div>
   <div class="column middle">
-
+    <div class= "reg-card">
+        <div class="subhead title flex layout horizontal center">Spell Slots</div>
+        <hr noshade color="slategray" style="padding:0px;margin:0px">
+        <div *ngFor="let k of [1,2,3,4,5,6,7,8,9]" style = "line-height:25px;display: flex;align-items: center;margin-left:5px">
+            placeholder {{k}} 
+        </div>
+    </div>
   </div>
   <div class="column middle">
-
+    <div class= "reg-card">
+      <div class="subhead title flex layout horizontal center">Skills</div>
+      <hr noshade color="slategray" style="padding:0px;margin:0px">
+      <div *ngFor="let skill of skillNames; let m = index" style = "line-height:25px;display: flex;align-items: center;margin-left:5px">
+          <mat-icon aria-label="prof" style="height:100%">{{skillButtons[m]}}</mat-icon>{{skillDecorators[m]}}{{skillTotals[m]}} {{skill}}<span style="color:slategray">({{skillMods[m]}})</span> 
+      </div>
+      <hr noshade color="slategray" style="padding:0px;margin-top:0px;margin-bottom:15px">
+      <mat-form-field style="margin-left:20px">
+        <mat-select placeholder="Base Ability Score" [(ngModel)]="selectedValue" (ngModelChange)='onSkillSelected(selectedValue)' name="abi">
+          <mat-option *ngFor="let abi of abis" [value]="abi.value">
+            {{abi.viewValue}}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+      </div>
   </div>
 </div>

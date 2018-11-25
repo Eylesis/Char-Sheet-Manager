@@ -4,7 +4,7 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatButtonModule, MatCheckboxModule, MatSidenavModule, MatSidenavContent, MatTabsModule, MatToolbarModule, MatIconModule,
-        MatDividerModule, MatCardModule } from '@angular/material';
+        MatDividerModule, MatCardModule, MatOptionModule, MatSelectModule } from '@angular/material';
 import { AppComponent } from './app.component';
 import { CharactersComponent } from './characters/characters.component';
 import { MainBarComponent } from './main-bar/main-bar.component';
@@ -36,7 +36,7 @@ import { DetailsComponent } from './details/details.component';
     FormsModule,
     HttpClientModule,
     BrowserAnimationsModule,
-    MatButtonModule, MatCheckboxModule, MatSidenavModule, MatTabsModule, MatToolbarModule,MatIconModule, MatDividerModule, MatCardModule, AppRoutingModule
+    MatOptionModule, MatSelectModule, MatButtonModule, MatCheckboxModule, MatSidenavModule, MatTabsModule, MatToolbarModule,MatIconModule, MatDividerModule, MatCardModule, AppRoutingModule
   ],
   providers: [SidenavService],
   bootstrap: [AppComponent]
